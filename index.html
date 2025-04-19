@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RantGram</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+</head>
+<body>
+
+  <div class="sidebar">
+    <h1>rantkabes</h1>
+    <nav>
+      <button class="nav-button" onclick="showFeed()"><i data-lucide="home"></i>Home</button>
+      <button class="nav-button" onclick="showProfile()"><i data-lucide="user"></i>Profile</button>
+      <button class="nav-button"><i data-lucide="bell"></i>Notifications</button>
+      <button class="nav-button"><i data-lucide="users"></i>Friends</button>
+      <button class="nav-button"><i data-lucide="menu"></i>Menu</button>
+    </nav>
+    <button class="logout-button" onclick="logout()">Logout</button>
+  </div>
+
+  <div class="main-container">
+    <div class="login-container" id="loginPage">
+      <h2>Login to RantGram</h2>
+      <form id="loginForm" onsubmit="handleLogin(event)">
+        <input type="text" placeholder="Username" id="loginUsername" required />
+        <input type="password" placeholder="Password" id="loginPassword" required />
+      
+        <h3>Select Profile Picture</h3>
+        <div class="profile-pics">
+          <label><input type="radio" name="profilePic" value="f1.jpg" hidden><img src="f1.jpg" /></label>
+          <label><input type="radio" name="profilePic" value="f2.jpg" hidden><img src="f2.jpg" /></label>
+          <label><input type="radio" name="profilePic" value="f3.jpg" hidden><img src="f3.jpg" /></label>
+          <label><input type="radio" name="profilePic" value="f4.jpg" hidden><img src="f4.jpg" /></label>
+          <label><input type="radio" name="profilePic" value="f5.jpg" hidden><img src="f5.jpg" /></label>
+          <label><input type="radio" name="profilePic" value="f6.jpg" hidden><img src="f6.jpg" /></label>
+          <label><input type="radio" name="profilePic" value="f7.jpg" hidden><img src="f7.jpg" /></label>
+          <label><input type="radio" name="profilePic" value="f8.jpg" hidden><img src="f8.jpg" /></label>
+          <label><input type="radio" name="profilePic" value="f9.jpg" hidden><img src="f9.jpg" /></label>
+          <label><input type="radio" name="profilePic" value="f10.jpg" hidden><img src="f10.jpg" /></label>
+        </div>
+        
+        <button type="submit" class="login-btn">Log In</button>
+      </form>
+    </div>
+
+    <div class="profile-sidebar hidden" id="profilePage">
+      <img id="userPic" src="" alt="Profile" class="sidebar-pic" />
+      <h3 id="usernameTitle"></h3>
+    </div>
+
+    <div class="feed-container hidden" id="feedPage">
+      <textarea id="rantInput" rows="3" placeholder="What's on your mind?"></textarea>
+      <button onclick="postRant()">Post</button>
+      <div id="rantFeed"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script>lucide.createIcons();</script>
+</body>
+</html>
